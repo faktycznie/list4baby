@@ -23,7 +23,7 @@ export class CatlistComponent implements OnInit {
     this.categories = this.categoryService.getCategories();
   }
 
-  onSelect( category ): void {
+  onSelect( category? ): void {
     if ( !category ) {
       category = true;
       this.selected = null;

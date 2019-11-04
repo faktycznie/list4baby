@@ -15,6 +15,8 @@ export class CategoriesComponent implements OnInit, DoCheck {
   name: string;
   categories: Category[];
   selectedCategory: Category;
+  disabled: string;
+  color: string;
   private catDiffer: KeyValueDiffer<string, any>;
 
   constructor(

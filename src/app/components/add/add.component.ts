@@ -33,9 +33,10 @@ import { CategoryService } from '../../services/category.service';
 export class AddComponent implements OnInit {
   items: Item[];
   name: string;
-  price: number;
-  shop: string;
   cat: number;
+  price: number;
+  quantity: number;
+  note: string;
   categories: Category[];
   @Input() selectedCat: number;
   moreStatus = false;

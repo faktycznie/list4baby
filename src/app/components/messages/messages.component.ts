@@ -8,7 +8,9 @@ import { MessagesService } from '../../services/messages.service';
   styleUrls: ['./messages.component.scss']
 })
 export class MessagesComponent implements OnInit, OnDestroy {
-  message: object;
+  message: any;
+  type: string;
+  name: string;
   constructor(
     private messagesService: MessagesService
   ) {}

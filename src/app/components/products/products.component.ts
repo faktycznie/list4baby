@@ -35,7 +35,7 @@ export class ProductsComponent implements OnInit {
     });
   }
 
-  getProducts(query: string, page: number): void {
+  getProducts(query: string, page?: number): void {
     this.loader = true;
     this.page = ( page ) ? page : 1;
     this.query = ( query ) ? query : 'for babies'; // default search query
