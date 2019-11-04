@@ -1,1 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+/* 3rd party resources */
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700,900&display=swap');
+@import '~normalize.css';
+@import '~animate.css/animate.min';
+
+/* Some basic, example styles */
+@import 'scss/base';
+@import 'scss/typo';
+@import 'scss/links';
+@import 'scss/buttons';
+@import 'scss/forms';

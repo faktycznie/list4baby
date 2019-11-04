@@ -1,0 +1,44 @@
+<div id="add-item">
+	<form (ngSubmit)="onAdd()">
+		<div class="form-group group1">
+			<div class="form-row inline">
+				<div class="form-field name">
+					<label class="sr-only" for="name">Name:</label>
+					<input type="text" name="name" [(ngModel)]="name" placeholder="name"/>
+				</div>
+				<div class="form-field category">
+					<select name="cat" (change)="onCatSelect($event.target.value)">
+						<option [value]="null" [selected]="!cat || !selectedCat">select category</option>
+						<option *ngFor="let cat of categories" [value]="cat.id" [selected]="cat.id == selectedCat">
+							{{cat.name}}
+						</option>
+					</select>
+				</div>
+			</div>
+			<div class="submit">
+				<button class="btn btn-save" type="submit">Add item</button>
+				<button class="more-link" (click)="showMore()">{{ moreStatus ? 'Less' : 'Show more' }}</button>
+			</div>
+		</div>
+		<div class="form-more" [@openClose]="moreStatus ? 'open' : 'closed'">
+			<div class="form-group group2">
+				<div class="form-row inline">
+					<div class="form-field quantity">
+						<label class="sr-only" for="quantity">Quantity:</label>
+						<input type="number" name="quantity" [(ngModel)]="quantity" placeholder="quantity"/>
+					</div>
+					<div class="form-field price">
+						<label class="sr-only" for="price">Price:</label>
+						<input type="number" name="price" [(ngModel)]="price" placeholder="price"/>
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="form-field note">
+						<label class="sr-only" for="note">Note:</label>
+						<textarea name="note" [(ngModel)]="note" placeholder="note"></textarea>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

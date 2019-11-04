@@ -1,0 +1,36 @@
+.pagination {
+	list-style: none;
+	margin: 10px 0;
+	padding: 0;
+	display: flex;
+	li {
+		margin: 3px;
+		a {
+			display: block;
+			background: #f6f6f6;
+			color: #222;
+			width: 30px;
+			height: 30px;
+			line-height: 30px;
+			border-radius: 50%;
+			text-align: center;
+			&:hover {
+				background: darken(#f6f6f6, 10%);
+			}
+		}
+		&.first,
+		&.last {
+			a {
+				border-radius: 6px;
+				width: auto;
+				padding: 0 10px;
+			}
+		}
+		&.current {
+			a {
+				background: #65d2c1;
+				color: #fff;
+			}
+		}
+	}
+}

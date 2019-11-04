@@ -1,0 +1,121 @@
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+	padding: 0 20px;
+	border: none;
+	height: auto;
+	line-height: 50px;
+	background: #f6f6f6;
+	border-radius: 6px;
+	width: 100%;
+	&:focus {
+		outline: none;
+		background: darken(#f6f6f6, 2%);
+	}
+}
+
+select {
+	height: 50px;
+}
+
+textarea {
+	padding: 20px;
+	line-height: 1.5;
+}
+
+.form-group {
+	.form-row {
+		margin-bottom: 20px;
+		&.inline {
+			display: flex;
+			margin-left: -10px;
+			margin-right: -10px;
+			> div {
+				flex: 1;
+				padding-left: 10px;
+				padding-right: 10px;
+			}
+			.submit {
+				flex-grow: 0;
+				.btn, button {
+					white-space: nowrap;
+				}
+			}
+			.form-field.color {
+				flex-grow: 0;
+				min-width: 110px;
+			}
+			@media(max-width: 480px) {
+				display: block;
+				margin-bottom: 0;
+				> div {
+					margin-bottom: 20px;
+				}
+			}
+		}
+		.form-field.color {
+			input {
+				cursor: pointer;
+				width: 90px;
+				box-shadow:inset 0px 0px 0px 1px #222;
+				text-align: center;
+				&::placeholder {
+					opacity: 1;
+					color: #222;
+				}
+			}
+		}
+	}
+	.submit {
+		.btn + .btn,
+		.btn + button {
+			margin-left: 20px;
+		}
+	}
+}
+
+.toggler-wrapper {
+	display: inline-block;
+	vertical-align: middle;
+	width: 45px;
+	height: 26px;
+	cursor: pointer;
+	position: relative;
+	margin-right: 20px;
+	input[type="checkbox"] {
+		display: none;
+		&:checked + .toggler-slider {
+			&:after {
+				left: 22px;
+				background: #65d2c1;
+			}
+		}
+	}
+	.toggler-slider {
+		background: #fff;
+		position: absolute;
+		border-radius: 100px;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		transition: all 300ms ease;
+		&:after {
+			content: '';
+			position: absolute;
+			transition: all 300ms ease;
+			width: 20px;
+			height: 20px;
+			border-radius: 50%;
+			left: 3px;
+			top: 3px;
+			background: #ccc;
+		}
+	}
+	&.grey {
+		.toggler-slider {
+			background: #f6f6f6;
+		}
+	}
+}

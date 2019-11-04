@@ -1,0 +1,15 @@
+<div class="filters">
+    <div class="categories">
+        <ul class="cat-list">
+            <li [class.active]="selected==null"><button class="cat-item" (click)="onSelect()">All</button></li>
+            <li *ngFor="let category of categories" [class.active]="selected==category.id">
+                <button
+                class="cat-item"
+                (click)="onSelect(category)"
+                [ngStyle]="category.color && { 'background': category.color }"
+                >{{category.name}}</button>
+            </li>
+        </ul>
+    </div>
+    <div *ngIf="total" class="total">Total: <strong>${{ total }}</strong></div>
+</div>

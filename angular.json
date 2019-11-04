@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "babylist": {
+    "list4baby": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/babylist",
+            "outputPath": "dist/list4baby",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "babylist:build"
+            "browserTarget": "list4baby:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "babylist:build:production"
+              "browserTarget": "list4baby:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "babylist:build"
+            "browserTarget": "list4baby:build"
           }
         },
         "test": {
@@ -110,15 +110,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "babylist:serve"
+            "devServerTarget": "list4baby:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "babylist:serve:production"
+              "devServerTarget": "list4baby:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "babylist"
+  "defaultProject": "list4baby"
 }

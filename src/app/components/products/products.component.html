@@ -1,0 +1,40 @@
+<div id="products">
+    <div id="query">
+        <form>
+            <div class="form-group">
+                <div class="form-row inline">
+                    <div class="form-field query">
+                        <input type="text" name="queryInput" [(ngModel)]="queryInput" placeholder="Query" (keyup.enter)="getProducts(queryInput)" />
+                    </div>
+                    <div class="submit">
+                        <button class="btn" (click)="getProducts(queryInput)">Search</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <app-messages></app-messages>
+
+    <app-pagination [cQuery]="queryURI" [cPages]="pages" [cPage]="page"></app-pagination>
+
+    <div id="products-box">
+        <div class="loader" *ngIf="loader"></div>
+        <ul class="products-list" *ngIf="products">
+            <li 
+            class="item animated fadeIn"
+            *ngFor="let product of products; index as i"
+            [ngStyle]="{ 'animation-duration': 1 + i/10 + 's' }"
+            >
+                <h2 class="title"><span class="number">{{ ( page > 1 ) ? ((page - 1) * 10) + (i + 1) : (i + 1) }}.</span> {{ product.title }}</h2>
+                <a href="{{ product.link }}" target="_blank">{{ product.displayLink }}</a>
+            </li>
+        </ul>
+    </div>
+
+    <app-pagination [cQuery]="queryURI" [cPages]="pages" [cPage]="page"></app-pagination>
+
+    <p *ngIf="total">Total results: <strong>{{ total }}</strong></p>
+    <p class="info">Results are limited to ~100</p>
+    <p class="info">Powered by Google Custom Search API</p>
+</div>
