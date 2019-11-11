@@ -1,17 +1,17 @@
-<div id="add-category">
+<div id="add-category" class="add-category">
 	<form (ngSubmit)="onAdd()">
-		<div class="form-group">
-			<div class="form-row inline">
-				<div class="form-field name">
+		<div class="form__group">
+			<div class="form__row form__row--inline">
+				<div class="form__field form_field--name">
 					<label class="sr-only" for="name">Name:</label>
 					<input type="text" name="name" [(ngModel)]="name" placeholder="name"/>
 				</div>
-				<div class="form-field color">
+				<div class="form__field form__field--color">
 					<label class="sr-only" for="color">Color:</label>
 					<input type="text" [(colorPicker)]="color" [cpCancelButton]="true" [cpAlphaChannel]="disabled" placeholder="Color" [style.background]="color"/>
 				</div>
-				<div class="submit">
-					<button class="btn btn-add" type="submit">Add category</button>
+				<div class="form__submit">
+					<button class="btn btn--add" type="submit">Add category</button>
 				</div>
 			</div>
 		</div>
@@ -20,39 +20,39 @@
 
 <app-messages></app-messages>
 
-<div id="categories">
-	<div class="categories-box">
-		<ul class="categories-list">
-			<li *ngFor="let category of categories" (click)="onSelect(category)">
+<div id="categories" class="categories">
+	
+	<div class="categories__container">
+		<ul class="categories__list">
+			<li class="categories__item" *ngFor="let category of categories" (click)="onSelect(category)">
 				<span>{{ category.name }}</span>
 			</li>
 		</ul>
 	</div>
-	<div id="edit-category">
+
+	<div class="categories__edit">
 		<div *ngIf="!selectedCategory">
-			<p class="select" *ngIf="categories.length > 0">Select category</p>
-			<p class="select" *ngIf="categories.length == 0">Add category</p>
+			<p class="categories__select" *ngIf="categories.length > 0">Select category</p>
+			<p class="categories__select" *ngIf="categories.length == 0">Add category</p>
 		</div>
 		<div class="animated fadeIn" *ngIf="selectedCategory">
 			<h2>Edit: {{ selectedCategory.name }}</h2>
 			<form (ngSubmit)="onEdit(selectedCategory)">
-				<div class="form-group">
-					<div class="form-row inline">
-						<div class="form-field name">
+				<div class="form__group">
+					<div class="form__row form__row--inline">
+						<div class="form__field form__field--name">
 							<label class="sr-only" for="name">Name:</label>
 							<input type="text" name="name" [(ngModel)]="selectedCategory.name" placeholder="name"/>
 						</div>
-						<div class="form-field color">
+						<div class="form__field form__field--color">
 							<label class="sr-only" for="color">Color:</label>
 							<input type="text" name="color" [(colorPicker)]="selectedCategory.color" [cpCancelButton]="disabled" [cpAlphaChannel]="false" placeholder="Color" [style.background]="selectedCategory.color"/>
 						</div>
 					</div>
-					<div class="form-row">
-						<div class="submit">
-							<button class="btn btn-save" type="submit">Save</button>
-							<button class="btn btn-cancel" type="button" (click)="goBack()">Cancel</button>
-							<button type="button" (click)="onRemove(selectedCategory)">Remove</button>
-						</div>
+					<div class="form__submit">
+						<button class="btn btn--save" type="submit">Save</button>
+						<button class="btn btn--cancel" type="button" (click)="goBack()">Cancel</button>
+						<button type="button" (click)="onRemove(selectedCategory)">Remove</button>
 					</div>
 				</div>
 			</form>

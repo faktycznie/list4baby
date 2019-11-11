@@ -26,18 +26,17 @@ button {
 		color: #fff;
 		background: #65d2c1;
 	}
-}
-
-.btn-border {
-	background: none;
-	border: 1px solid #222;
-	color: #222;
-	border-radius: 18px;
-	padding: 6px 15px;
-	font-size: 12px;
-	&:hover {
-		color: #fff;
-		background: #65d2c1;
-		border-color: #65d2c1;
+	&--border {
+		background: none;
+		border: 1px solid #222;
+		color: #222;
+		border-radius: 18px;
+		padding: 6px 15px;
+		font-size: 12px;
+		&:hover {
+			color: #fff;
+			background: #65d2c1;
+			border-color: #65d2c1;
+		}
 	}
 }

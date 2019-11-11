@@ -1,13 +1,13 @@
 <app-messages></app-messages>
 
-<div id="settings">
-	<div class="field sample-data">
-		<label class="toggler-wrapper grey">
+<div id="settings" class="settings">
+	<div class="settings__field settings__field--sample-data">
+		<label class="toggler-wrapper toggler-wrapper--grey">
 			<input type="checkbox" (change)="useSampleData()" [checked]="useSample">
-			<div class="toggler-slider"></div>
+			<div class="toggler-wrapper__slider"></div>
 		</label> Use sample data
 	</div>
-	<div class="field reset">
+	<div class="settings__field settings__field--reset">
 		<button class="btn" (click)="removeData()">Remove all data</button>
 	</div>
 </div>

@@ -24,25 +24,25 @@ textarea {
 	line-height: 1.5;
 }
 
-.form-group {
-	.form-row {
+.form__group {
+	.form__row {
 		margin-bottom: 20px;
-		&.inline {
+		&--inline {
 			display: flex;
 			margin-left: -10px;
 			margin-right: -10px;
-			> div {
+			.form__field {
 				flex: 1;
 				padding-left: 10px;
 				padding-right: 10px;
 			}
-			.submit {
+			.form__submit {
 				flex-grow: 0;
 				.btn, button {
 					white-space: nowrap;
 				}
 			}
-			.form-field.color {
+			.form__field--color {
 				flex-grow: 0;
 				min-width: 110px;
 			}
@@ -54,7 +54,7 @@ textarea {
 				}
 			}
 		}
-		.form-field.color {
+		.form__field--color {
 			input {
 				cursor: pointer;
 				width: 90px;
@@ -67,7 +67,7 @@ textarea {
 			}
 		}
 	}
-	.submit {
+	.form__submit {
 		.btn + .btn,
 		.btn + button {
 			margin-left: 20px;
@@ -83,16 +83,7 @@ textarea {
 	cursor: pointer;
 	position: relative;
 	margin-right: 20px;
-	input[type="checkbox"] {
-		display: none;
-		&:checked + .toggler-slider {
-			&:after {
-				left: 22px;
-				background: #65d2c1;
-			}
-		}
-	}
-	.toggler-slider {
+	&__slider {
 		background: #fff;
 		position: absolute;
 		border-radius: 100px;
@@ -113,8 +104,17 @@ textarea {
 			background: #ccc;
 		}
 	}
-	&.grey {
-		.toggler-slider {
+	input[type="checkbox"] {
+		display: none;
+		&:checked + .toggler-wrapper__slider {
+			&:after {
+				left: 22px;
+				background: #65d2c1;
+			}
+		}
+	}
+	&--grey {
+		.toggler-wrapper__slider {
 			background: #f6f6f6;
 		}
 	}

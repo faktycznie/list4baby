@@ -8,19 +8,19 @@
 <ul class="items">
     <li
     *ngFor="let item of items; index as i"
-    class="item animated slideInUp"
-    [ngClass]="item.cat ? 'cat-' + item.cat : 'no-cat'"
+    class="items__item animated slideInUp"
+    [ngClass]="item.cat ? 'items__item--cat-' + item.cat : 'items__item--no-cat'"
     [ngStyle]="{ 'animation-duration': 0.5 + i/5 + 's' }"
-    [class.is-completed]="item.completed === true">
+    [class.items__item--completed]="item.completed === true">
         <label class="toggler-wrapper">
             <input type="checkbox" (change)="onComplete(item)" [checked]="item.completed">
-            <div class="toggler-slider"></div>
+            <div class="toggler-wrapper__slider"></div>
         </label>
-        <a class="title" [routerLink]="['/item', item.id]">{{item.name}}</a> 
-        <button class="btn btn-border btn-online" (click)="onSearch(item.name)">Search online</button>
-        <span class="price" *ngIf="item.price">${{ item.price }}</span>
-        <span class="quantity" *ngIf="item.quantity > 1"><span class="q">&times;</span>{{ item.quantity }}</span>
-        <span class="category" *ngIf="item.cat != undefined" [ngStyle]="{ 'background': getColor(item.cat) }">{{ getName(item.cat) }}</span>
+        <a class="items__title" [routerLink]="['/item', item.id]">{{item.name}}</a> 
+        <button class="btn btn--border btn--online" (click)="onSearch(item.name)">Search online</button>
+        <span class="items__price" *ngIf="item.price">${{ item.price }}</span>
+        <span class="items__quantity" *ngIf="item.quantity > 1"><span class="q">&times;</span>{{ item.quantity }}</span>
+        <span class="items__category" *ngIf="item.cat != undefined" [ngStyle]="{ 'background': getColor(item.cat) }">{{ getName(item.cat) }}</span>
         <button class="remove-item" (click)="onRemove(item)" title="Remove">&times;</button>
     </li>
 </ul>

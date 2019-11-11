@@ -1,23 +1,23 @@
-#products {
-	#query {
+.products {
+	&__query {
 		margin: 0 0 20px;
 	}
-	.products-list {
+	&__list {
 		list-style: none;
 		margin: 0;
 		padding: 0;
-		.item {
-			margin: 15px 0;
-			padding: 30px;
-			background: #f6f6f6;
-			border-radius: 15px;
-			transition: all 0.3s ease;
-			h2 {
-				font-size: 20px;
-				font-weight: 700;
-				line-height: 1.1;
-				margin: 0 0 5px;
-			}
-		}
+	}
+	&__item {
+		margin: 15px 0;
+		padding: 30px;
+		background: #f6f6f6;
+		border-radius: 15px;
+		transition: all 0.3s ease;
+	}
+	&__title {
+		font-size: 20px;
+		font-weight: 700;
+		line-height: 1.1;
+		margin: 0 0 5px;
 	}
 }

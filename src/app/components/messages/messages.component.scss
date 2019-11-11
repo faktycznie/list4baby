@@ -1,11 +1,13 @@
-.alert {
-	margin: 15px 0;
-	padding: 30px;
-	background: #fcfbe3;
-	color: #a49a23;
-	border-radius: 15px;
-	&.error {
-		background: #f4dcdc;
-		color: #b81e1e;
+.messages {
+	&__alert {
+		margin: 15px 0;
+		padding: 30px;
+		background: #fcfbe3;
+		color: #a49a23;
+		border-radius: 15px;
+		&--error {
+			background: #f4dcdc;
+			color: #b81e1e;
+		}
 	}
 }

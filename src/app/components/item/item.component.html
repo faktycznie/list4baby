@@ -1,15 +1,15 @@
-<div id="item" *ngIf="item">
+<div id="item" class="item" *ngIf="item">
     <h2>Edit: {{ item.name }}</h2>
     <form (ngSubmit)="onEdit()">
-        <div class="form-group">
-            <div class="form-row">
-                <div class="form-field name">
+        <div class="form__group">
+            <div class="form__row">
+                <div class="form__field form__field--name">
                     <label class="sr-only" for="name">Name:</label>
                     <input type="text" name="name" [(ngModel)]="item.name" placeholder="name"/>
                 </div>
             </div>
-            <div class="form-row">
-                <div class="form-field cat">
+            <div class="form__row">
+                <div class="form__field form__field--cat">
                     <select name="cat" [(ngModel)]="item.cat">
                         <option [ngValue]=""></option>
                         <option *ngFor="let cat of categories" [ngValue]="cat.id" [selected]="cat.id == item.cat">
@@ -18,29 +18,28 @@
                     </select>
                 </div>
             </div>
-            <div class="form-row">
-                <div class="form-field quantity">
+            <div class="form__row">
+                <div class="form__field form__field--quantity">
                     <label class="sr-only" for="quantity">Quantity:</label>
                     <input type="number" name="quantity" [(ngModel)]="item.quantity" placeholder="quantity"/>
                 </div>
             </div>
-            <div class="form-row">
-                <div class="form-field price">
+            <div class="form__row">
+                <div class="form__field form__field--price">
                     <label class="sr-only" for="price">Price:</label>
                     <input type="number" name="price" [(ngModel)]="item.price" placeholder="price"/>
                 </div>
             </div>
-            <div class="form-row">
-                <div class="form-field note">
+            <div class="form__row">
+                <div class="form__field form__field--note">
                     <label class="sr-only" for="note">Note:</label>
                     <textarea name="note" [(ngModel)]="item.note" placeholder="note">{{ item.note }}</textarea>
                 </div>
             </div>
-            <div class="submit">
-                <button class="btn btn-save" type="submit">Save</button>
-                <button class="btn" type="button" (click)="goBack()">Cancel</button>
+            <div class="form__submit">
+                <button class="btn btn--save" type="submit">Save</button>
+                <button class="btn btn--cancel" type="button" (click)="goBack()">Cancel</button>
             </div>
-            
         </div>
     </form>
 </div>

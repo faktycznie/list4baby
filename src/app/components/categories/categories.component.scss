@@ -1,33 +1,33 @@
-#categories {
+.categories {
 	display: flex;
 	margin: 0 -10px;
-	.categories-box,
-	#edit-category {
+	&__container,
+	&__edit {
 		width: 50%;
 		padding: 0 10px;
 	}
 	@media (max-width: 767px) {
 		display: block;
-		.categories-box,
-		#edit-category {
+		&__container,
+		&__edit {
 			width: 100%;
 		}
 	}
-	#edit-category {
+	&__edit {
 		border: 5px solid #f6f6f6;
 		padding: 15px;
 		margin-top:15px;
 		margin-bottom: 15px;
 		border-radius: 15px;
-		.select {
-			color: darken(#f6f6f6, 5%);
-		}
 	}
-	.categories-list {
+	&__select {
+		color: darken(#f6f6f6, 5%);
+	}
+	&__list {
 		list-style: none;
 		margin: 0;
 		padding: 0;
-		li {
+		.categories__item {
 			cursor: pointer;
 			margin: 15px 0;
 			padding: 30px;
@@ -41,3 +41,4 @@
 		}
 	}
 }
+

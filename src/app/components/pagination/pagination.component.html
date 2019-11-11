@@ -1,23 +1,23 @@
 <ul class="pagination" *ngIf="cPages">
-	<li class="first" *ngIf="cPage > 1">
-		<a routerLink="/products/{{ cQuery }}/1">First</a>
+	<li class="pagination__item pagination__item--first" *ngIf="cPage > 1">
+		<a class="pagination__anchor" routerLink="/products/{{ cQuery }}/1">First</a>
 	</li>
-	<li *ngIf="cPage > 2">
-		<a routerLink="/products/{{ cQuery }}/{{ (cPage - 2) }}">{{ (cPage - 2) }}</a>
+	<li *ngIf="cPage > 2" class="pagination__item">
+		<a class="pagination__anchor" routerLink="/products/{{ cQuery }}/{{ (cPage - 2) }}">{{ (cPage - 2) }}</a>
 	</li>
-	<li *ngIf="cPage > 1">
-		<a routerLink="/products/{{ cQuery }}/{{ (cPage - 1) }}">{{ (cPage - 1) }}</a>
+	<li *ngIf="cPage > 1" class="pagination__item">
+		<a class="pagination__anchor" routerLink="/products/{{ cQuery }}/{{ (cPage - 1) }}">{{ (cPage - 1) }}</a>
 	</li>
-	<li class="current">
-		<a routerLink="/products/{{ cQuery }}/{{ cPage }}">{{ cPage }}</a>
+	<li class="pagination__item pagination__item--current">
+		<a class="pagination__anchor" routerLink="/products/{{ cQuery }}/{{ cPage }}">{{ cPage }}</a>
 	</li>
-	<li *ngIf="(cPage + 1) < cPages">
-		<a routerLink="/products/{{ cQuery }}/{{ (cPage + 1) }}">{{ (cPage + 1) }}</a>
+	<li *ngIf="(cPage + 1) < cPages" class="pagination__item">
+		<a class="pagination__anchor" routerLink="/products/{{ cQuery }}/{{ (cPage + 1) }}">{{ (cPage + 1) }}</a>
 	</li>
-	<li *ngIf="(cPage + 2) < cPages">
-		<a routerLink="/products/{{ cQuery }}/{{ (cPage + 2) }}">{{ (cPage + 2) }}</a>
+	<li *ngIf="(cPage + 2) < cPages" class="pagination__item">
+		<a class="pagination__anchor" routerLink="/products/{{ cQuery }}/{{ (cPage + 2) }}">{{ (cPage + 2) }}</a>
 	</li>
-	<li class="last" *ngIf="(cPage + 1) < cPages">
-		<a routerLink="/products/{{ cQuery }}/{{ cPages }}">Last</a>
+	<li class="pagination__item pagination__item--last" *ngIf="(cPage + 1) < cPages">
+		<a class="pagination__anchor" routerLink="/products/{{ cQuery }}/{{ cPages }}">Last</a>
 	</li>
 </ul>
